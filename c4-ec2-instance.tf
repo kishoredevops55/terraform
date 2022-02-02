@@ -1,7 +1,7 @@
 # Create EC2 Instance - Amazon2 Linux
 resource "aws_instance" "my-ec2-vm" {
   ami           = data.aws_ami.amzlinux.id 
-  instance_type = var.instance_type
+  instance_type = var.ec2_instance_type
   count = 1
   key_name      = "devops"
   user_data = file("apache-install.sh")  
